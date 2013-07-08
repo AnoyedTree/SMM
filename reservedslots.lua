@@ -1,4 +1,3 @@
-
 local kReservedSlots = 2;
 local kReservedPassword = "thekid";
 
@@ -31,7 +30,7 @@ local function Reserved_ClientConnect( client )
 	
 	if ( curplayers >= maxplayers ) then
 		Reserved_SetPassword( true );
-        if ( not PlayerIsAdmin( client:GetUserId() ) and curplayers > maxplayers ) then
+        elseif ( not PlayerIsAdmin( client:GetUserId() ) and curplayers > maxplayers ) then
 			Server.DisconnectClient( client );
 		end
 	end
