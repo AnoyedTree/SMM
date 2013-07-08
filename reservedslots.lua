@@ -30,7 +30,7 @@ local function Reserved_ClientConnect( client )
 	
 	if ( curplayers >= maxplayers ) then
 		Reserved_SetPassword( true );
-        elseif ( not PlayerIsAdmin( client:GetUserId() ) and curplayers > maxplayers ) then
+                if ( not PlayerIsAdmin( client:GetUserId() ) and curplayers > maxplayers ) then
 			Server.DisconnectClient( client );
 		end
 	end
